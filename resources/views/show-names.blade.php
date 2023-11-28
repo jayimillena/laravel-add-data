@@ -23,6 +23,7 @@
                           <td>Fullname</td>
                           <td>Age</td>
                           <td>Address</td>
+                          <td>Option</td>
                         </tr>
                       <thead>
                       <tbody>
@@ -32,6 +33,7 @@
                           <td>{{ $name->fullname }}</td>  
                           <td>{{ $name->age }}</td>  
                           <td>{{ $name->address }}</td>  
+                          <td><a href="{{ route('edit', ['id', $name->id]) }}" class="btn btn-primary">Edit</a></td>
                         </tr>
                         @endforeach
                       </tbody>

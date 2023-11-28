@@ -17,3 +17,4 @@ use App\Http\Controllers\NameController;
 Route::get('/', [NameController::class, 'index'])->name('home');
 Route::post('/save', [NameController::class, 'store'])->name('store');
 Route::get('/show', [NameController::class, 'show'])->name('show');
+Route::get('/edit/{id}', [NameController::class, 'edit'])->name('edit');

@@ -51,9 +51,12 @@ class NameController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Name $name)
+    public function edit(String $id)
     {
-        //
+        $name = Name::find($id);
+        return view('edit-names', [
+            'name' => $name
+        ]);
     }
 
     /**
