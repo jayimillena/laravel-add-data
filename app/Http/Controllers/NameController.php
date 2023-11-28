@@ -12,7 +12,7 @@ class NameController extends Controller
      */
     public function index()
     {
-        //
+        return view('welcome');
     }
 
     /**
@@ -28,15 +28,24 @@ class NameController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $names = new Name();
+        $names->fullname = $request->fullname;
+        $names->age = $request->age;
+        $names->address = $request->address;
+
+        $names->save();
+
+        return redirect()->route('home');
+    }   
 
     /**
      * Display the specified resource.
      */
     public function show(Name $name)
     {
-        //
+        return view('show-names', [
+            'names' => Name::all()
+        ]);
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NameController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [NameController::class, 'index'])->name('home');
+Route::post('/save', [NameController::class, 'store'])->name('store');
+Route::get('/show', [NameController::class, 'show'])->name('show');

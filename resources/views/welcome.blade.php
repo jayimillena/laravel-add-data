@@ -15,7 +15,9 @@
         <div class="container">
             <div class="row align-content-center">
                 <div class="col-6">
-                    <form action="">
+                    <a href="{{ route('show') }}">Show names</a>
+                    <form action="{{ route('store') }}" method="POST">
+                        @csrf
                         <h2>Add Record</h2>
                         <div class="input-form">
                             <label for="fullname">Fullname</label>
